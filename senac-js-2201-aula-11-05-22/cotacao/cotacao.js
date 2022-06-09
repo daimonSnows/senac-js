@@ -1,8 +1,8 @@
-document.querySelector('button').addEventListener('click', mostraCotacao);
+document.querySelector('button').addEventListener('click', mostraCotacao); /*vai pegar o botao vai add click e vai mostrar a cotacao*/
 
 function mostraCotacao(){
     try{
-        fetch('http://127.0.0.1:5500/AJAX/cotacoes.html').then(function(resultado){
+        fetch('http://127.0.0.1:5500/AJAX/cotacoes.html').then(function(resultado){ /*puxa da url e retornar a funcao resultado*/
             return resultado.text();
         }).then(function(cotacoes){
             const moedas = JSON.parse(cotacoes);
@@ -22,7 +22,7 @@ function mostraCotacao(){
                 ul.appendChild(li);
             }
         });
-    }catch(e){
+    }catch(e){ /* caso encontre erro exibe um alerta*/
 
         alert('Problema ao obter os dados: ' + e.message);
     }
